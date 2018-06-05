@@ -4,6 +4,9 @@
 // receives its arguments one at a time, returning a new function with each
 // argument until it has received all its arguments and finally evaluates
 
+// Curried functions are essential to functional composition, so
+// it's an important concept to learn well. Let's look at the canonical example.
+
 // Canonical Example
 function add(x) {
   return function(y) {
