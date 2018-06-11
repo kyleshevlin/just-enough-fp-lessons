@@ -3,6 +3,21 @@
 // A pure function is a function whose output is derived
 // entirely from its inputs and causes no side effects
 
+// The most common example of pure functions that people have
+// encountered are mathematical functions. You might recall
+// from math, seeing a function that looked like this:
+// f(x) = x + 1. This is a function that accepts one variable,
+// and returns a value based on that input. We can write this in
+// JavaScript as:
+
+const f = x => x + 1
+
+// This function is a pure function because we always get the same
+// output from the same input, and we cause no side effects in our
+// program or outside world.
+
+// Let's compare this with several impure functions.
+
 // Impure Function ex. 1 - Output not derived solely from inputs
 const COST_OF_ITEM = 19
 function cartTotal(quantity) {
