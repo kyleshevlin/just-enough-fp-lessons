@@ -4,30 +4,21 @@
 //   1. Accepts a function as an argument
 //   2. Returns a new function
 
-// Functions that take a callback argument are an example
-// of higher order functions that obey the first rule.
+// Receives a function as an argument
+const withCount = fn => {
+  let count = 0
 
-function delayedCall(timeout, callback) {
-  setTimeout(callback, timeout)
-}
-
-delayedCall(1000, () => {
-  console.log('A late greeting')
-})
-
-// Functions that return new functions are an example
-// of higher order functions that obey the second rule.
-// In functional programming, this is the more common use
-// of higher order functions.
-
-function strConcat(str1) {
-  return function(str2) {
-    return `${str1}${str2}`
+  // Returns a new function
+  return (...args) => {
+    console.log(`Call count: ${++count}`)
+    return fn(...args)
   }
 }
 
-// Calling strConcat with a string returns a function that
-// awaits a second string to concatenate
-const withFoo = strConcat('foo ')
+const add = (x, y) => x + y
 
-withFoo('bar') // 'foo bar'
+const countedAdd = withCount(add)
+
+console.log(countedAdd(1, 2))
+console.log(countedAdd(2, 2))
+console.log(countedAdd(3, 2))
