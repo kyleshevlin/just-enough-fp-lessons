@@ -6,9 +6,11 @@ These lessons are based on the topics covered in my conference talk "Just Enough
 
 1. Higher Order Functions
 2. Pure Functions
-3. Currying & Partial Application
-4. Argument Order in Curried Functions
-5. Pointfree Programming
-6. Composition with Compose
-7. Composition with Pipe
-8. The Associate Property and Composition
+3. Immutable Data
+4. Currying
+5. Partial Application
+6. Argument Order in Curried Functions
+7. Pointfree Programming
+8. Composition
+9. The Associate Property
+10. Debugging Compositions
