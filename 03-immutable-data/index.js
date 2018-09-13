@@ -9,6 +9,30 @@
 // functional programming thread-safe, and capable of handling some
 // difficult situations where mutable data structures struggle.
 
+// In JavaScript, common data structures like arrays and objects can be
+// mutated. A way to test this is to assign several variables the same
+// reference to a data structure, and then check that mutating one, mutates
+// all references.
+
+const a = [1, 2, 3]
+const b = a
+b.push(4)
+console.log(a) // [1, 2, 3, 4]
+console.log(a === b) // true, same reference
+
+// Or with an object
+const c = { foo: 'bar' }
+const d = c
+d.foo = 'baz'
+console.log(d.foo) // 'baz'
+console.log(c === d) // true, same reference
+
+// In functional programming, we use immutable data structures, which means
+// that when we want to modify data, we return a new data structure
+// that clones the previous state and merges in the updated part of our state.
+// Thus, our original data remains the same, and our reference check fails,
+// because they are indeed new structures.
+
 // One of the ways I like to describe the difference between mutable
 // and immutable data structures is to think about taking a drink from
 // a glass. Let's create two classes, a MutableGlass and an ImmutableGlass,
