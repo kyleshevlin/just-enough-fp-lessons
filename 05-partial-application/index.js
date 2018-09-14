@@ -12,6 +12,8 @@
 // We can create a function that bakes in the base URL, while allowing other
 // arguments to be passed in later
 
+const fetch = require('node-fetch')
+
 const getFromAPI = baseURL => endPoint => callback =>
   fetch(`${baseURL}${endPoint}`)
     .then(res => res.json())
@@ -23,7 +25,9 @@ const getFromAPI = baseURL => endPoint => callback =>
 // Now we can partially apply a baseURL to create a reusable function for
 // one of our APIs
 
-const getGithub = getFromAPI('https://api.github.com')
+const getGithub = getFromAPI(
+  'https://api.github.com'
+)
 
 // We can create several get request functions by partially applying different
 // endpoints to our getGithub function
@@ -35,12 +39,12 @@ const getGithubRepos = getGithub('/repositories')
 
 getGithubUsers(data =>
   data.forEach(user => {
-    console.log(user.login)
+    console.log(`User: ${user.login}`)
   })
 )
 getGithubRepos(data =>
   data.forEach(repo => {
-    console.log(repo.name)
+    console.log(`Repo: ${repo.name}`)
   })
 )
 
@@ -49,7 +53,7 @@ getGithubRepos(data =>
 const getGithubOrgs = getGithub('/organizations')
 getGithubOrgs(data =>
   data.forEach(org => {
-    console.log(org.login)
+    console.log(`Org: ${org.login}`)
   })
 )
 
@@ -65,6 +69,8 @@ const getRedditAww = getReddit('/r/aww.json')
 
 const imageURLs = getRedditAww(payload =>
   payload.data.children.forEach(child => {
-    console.log(child.preview.images[0].source.url)
+    console.log(
+      child.data.preview.images[0].source.url
+    )
   })
 )

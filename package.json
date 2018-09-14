@@ -1,0 +1,22 @@
+{
+  "name": "just-enough-fp-lessons",
+  "version": "1.0.0",
+  "description": "Just Enough Functional Progrmaming Lessons",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyleshevlin/just-enough-fp-lessons.git"
+  },
+  "author": "Kyle Shevlin <kyle.a.shevlin@gmail.com> (http://kyleshevlin.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyleshevlin/just-enough-fp-lessons/issues"
+  },
+  "homepage": "https://github.com/kyleshevlin/just-enough-fp-lessons#readme",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  }
+}
