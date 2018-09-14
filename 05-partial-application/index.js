@@ -49,7 +49,7 @@ getGithubRepos(data =>
 const getGithubOrgs = getGithub('/organizations')
 getGithubOrgs(data =>
   data.forEach(org => {
-    console.log(org.name)
+    console.log(org.login)
   })
 )
 
@@ -64,7 +64,7 @@ const getRedditAww = getReddit('/r/aww.json')
 // And fetch the URLs of those images
 
 const imageURLs = getRedditAww(payload =>
-  payload.data.children
-    .filter(child => !!child.preview)
-    .map(child => child.preview.images[0].source.url)
+  payload.data.children.forEach(child => {
+    console.log(child.preview.images[0].source.url)
+  })
 )
