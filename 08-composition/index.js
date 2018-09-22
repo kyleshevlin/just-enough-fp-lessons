@@ -48,3 +48,13 @@ const enhance = compose(repeat, exclaim, scream)
 // same string, we get the same result.
 
 enhance('I love egghead') // I LOVE EGGHEAD! I LOVE EGGHEAD!
+
+// Another way to create compositions that you might come across in libraries like
+// Ramda or lodash-fp is the `pipe` function. It works exactly the same as `compose`,
+// except the functions are reduced from left-to-right instead of right-to-left
+
+const pipe = (...fns) => x => fns.reduce((acc, fn) => fn(acc), x)
+
+const enhanceWithPipe = pipe(scream, exclaim, repeat)
+
+enhanceWithPipe('I love egghead') // I LOVE EGGHEAD! I LOVE EGGHEAD!
