@@ -22,7 +22,7 @@ const arr1Doubles = arr1withMap(double) // [2, 4, 6, 8, 10]
 
 const map2 = fn => xs => xs.map(fn)
 
-const listDoubler = map(double)
+const listDoubler = map2(double)
 
 listDoubler(arr1) // [2, 4, 6, 8, 10]
 listDoubler([3, 4, 8]) // [6, 8, 16]
