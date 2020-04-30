@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/kyleshevlin/just-enough-fp-lessons#readme",
   "dependencies": {
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.6.0"
   }
 }
